@@ -32,6 +32,14 @@
 		D77ABD3F19C3E22100FA6148 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77ABD3E19C3E22100FA6148 /* SystemConfiguration.framework */; };
 		D77ABD4119C3E22700FA6148 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77ABD4019C3E22700FA6148 /* Security.framework */; };
 		D77ABD4319C3E22F00FA6148 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77ABD4219C3E22F00FA6148 /* CoreLocation.framework */; };
+		D77ABD8919C3FA3E00FA6148 /* BTDiscovery.m in Sources */ = {isa = PBXBuildFile; fileRef = D77ABD8619C3FA3D00FA6148 /* BTDiscovery.m */; };
+		D77ABD8A19C3FA3E00FA6148 /* BTService.m in Sources */ = {isa = PBXBuildFile; fileRef = D77ABD8819C3FA3E00FA6148 /* BTService.m */; };
+		D77ABD8C19C4923500FA6148 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77ABD8B19C4923500FA6148 /* CoreVideo.framework */; };
+		D77ABD8E19C4923A00FA6148 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77ABD8D19C4923A00FA6148 /* CoreMedia.framework */; };
+		D77ABD9019C4924400FA6148 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77ABD8F19C4924400FA6148 /* QuartzCore.framework */; };
+		D77ABD9219C4924B00FA6148 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77ABD9119C4924B00FA6148 /* CoreImage.framework */; };
+		D77ABD9519C492E600FA6148 /* DetectFace.m in Sources */ = {isa = PBXBuildFile; fileRef = D77ABD9419C492E600FA6148 /* DetectFace.m */; };
+		D77ABD9819C497C400FA6148 /* SVFacialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D77ABD9719C497C400FA6148 /* SVFacialViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +84,18 @@
 		D77ABD3E19C3E22100FA6148 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D77ABD4019C3E22700FA6148 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		D77ABD4219C3E22F00FA6148 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		D77ABD8519C3FA3D00FA6148 /* BTDiscovery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTDiscovery.h; sourceTree = "<group>"; };
+		D77ABD8619C3FA3D00FA6148 /* BTDiscovery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTDiscovery.m; sourceTree = "<group>"; };
+		D77ABD8719C3FA3D00FA6148 /* BTService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTService.h; sourceTree = "<group>"; };
+		D77ABD8819C3FA3E00FA6148 /* BTService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTService.m; sourceTree = "<group>"; };
+		D77ABD8B19C4923500FA6148 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		D77ABD8D19C4923A00FA6148 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		D77ABD8F19C4924400FA6148 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		D77ABD9119C4924B00FA6148 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		D77ABD9319C492E600FA6148 /* DetectFace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetectFace.h; path = ../DetectFace.h; sourceTree = "<group>"; };
+		D77ABD9419C492E600FA6148 /* DetectFace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetectFace.m; path = ../DetectFace.m; sourceTree = "<group>"; };
+		D77ABD9619C497C400FA6148 /* SVFacialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVFacialViewController.h; sourceTree = "<group>"; };
+		D77ABD9719C497C400FA6148 /* SVFacialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVFacialViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +103,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D77ABD9219C4924B00FA6148 /* CoreImage.framework in Frameworks */,
+				D77ABD9019C4924400FA6148 /* QuartzCore.framework in Frameworks */,
+				D77ABD8E19C4923A00FA6148 /* CoreMedia.framework in Frameworks */,
+				D77ABD8C19C4923500FA6148 /* CoreVideo.framework in Frameworks */,
 				D77ABD4319C3E22F00FA6148 /* CoreLocation.framework in Frameworks */,
 				D77ABD4119C3E22700FA6148 /* Security.framework in Frameworks */,
 				D77ABD3F19C3E22100FA6148 /* SystemConfiguration.framework in Frameworks */,
@@ -131,6 +155,10 @@
 		D77ABC0819C3A0C500FA6148 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D77ABD9119C4924B00FA6148 /* CoreImage.framework */,
+				D77ABD8F19C4924400FA6148 /* QuartzCore.framework */,
+				D77ABD8D19C4923A00FA6148 /* CoreMedia.framework */,
+				D77ABD8B19C4923500FA6148 /* CoreVideo.framework */,
 				D77ABD4219C3E22F00FA6148 /* CoreLocation.framework */,
 				D77ABD4019C3E22700FA6148 /* Security.framework */,
 				D77ABD3E19C3E22100FA6148 /* SystemConfiguration.framework */,
@@ -149,10 +177,17 @@
 		D77ABC0F19C3A0C500FA6148 /* Selvee */ = {
 			isa = PBXGroup;
 			children = (
-				D77ABC4419C3D37F00FA6148 /* Third Party */,
+				D77ABD9319C492E600FA6148 /* DetectFace.h */,
+				D77ABD9419C492E600FA6148 /* DetectFace.m */,
+				D77ABD8519C3FA3D00FA6148 /* BTDiscovery.h */,
+				D77ABD8619C3FA3D00FA6148 /* BTDiscovery.m */,
+				D77ABD8719C3FA3D00FA6148 /* BTService.h */,
+				D77ABD8819C3FA3E00FA6148 /* BTService.m */,
 				D77ABC1819C3A0C500FA6148 /* SVAppDelegate.h */,
 				D77ABC1919C3A0C500FA6148 /* SVAppDelegate.m */,
 				D77ABC1B19C3A0C500FA6148 /* Main.storyboard */,
+				D77ABD9619C497C400FA6148 /* SVFacialViewController.h */,
+				D77ABD9719C497C400FA6148 /* SVFacialViewController.m */,
 				D77ABC3E19C3CC1800FA6148 /* SVRecordVideoViewController.h */,
 				D77ABC3F19C3CC1800FA6148 /* SVRecordVideoViewController.m */,
 				D77ABC4119C3CC2500FA6148 /* SVPlayVideoViewController.h */,
@@ -193,13 +228,6 @@
 				D77ABC3119C3A0C500FA6148 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		D77ABC4419C3D37F00FA6148 /* Third Party */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Third Party";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,8 +333,12 @@
 			files = (
 				D77ABC1619C3A0C500FA6148 /* main.m in Sources */,
 				D77ABC4019C3CC1800FA6148 /* SVRecordVideoViewController.m in Sources */,
+				D77ABD9519C492E600FA6148 /* DetectFace.m in Sources */,
+				D77ABD9819C497C400FA6148 /* SVFacialViewController.m in Sources */,
 				D77ABC4319C3CC2500FA6148 /* SVPlayVideoViewController.m in Sources */,
+				D77ABD8919C3FA3E00FA6148 /* BTDiscovery.m in Sources */,
 				D77ABC1A19C3A0C500FA6148 /* SVAppDelegate.m in Sources */,
+				D77ABD8A19C3FA3E00FA6148 /* BTService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

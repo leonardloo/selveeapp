@@ -7,8 +7,20 @@
 //
 
 #import "SVRecordVideoViewController.h"
+#import "DetectFace.h"
 
-@interface SVRecordVideoViewController ()
+@interface SVRecordVideoViewController () <DetectFaceDelegate>
+
+@property (strong, nonatomic) NSTimer *timerTXDelay;
+@property (nonatomic) BOOL allowTX;
+
+@property (weak, nonatomic) IBOutlet UIView *previewView;
+@property (strong, nonatomic) IBOutlet UIImageView *outImageView;
+@property (strong, nonatomic) DetectFace *detectFaceController;
+
+@property (nonatomic, strong) UIImageView *hatImgView;
+@property (nonatomic, strong) UIImageView *beardImgView;
+@property (nonatomic, strong) UIImageView *mustacheImgView;
 
 
 @end
@@ -26,6 +38,19 @@ const unsigned char SpeechKitApplicationKey[] = {0x66, 0xe9, 0x5b, 0x9a, 0x2c, 0
     self.appDelegate = (SVAppDelegate *)[UIApplication sharedApplication].delegate;
     [self.appDelegate setupSpeechKitConnection];
     
+    self.allowTX = YES;
+    
+    // Watch Bluetooth connection
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(connectionChanged:) name:RWT_BLE_SERVICE_CHANGED_STATUS_NOTIFICATION object:nil];
+    
+    // Start the Bluetooth discovery process
+    [BTDiscovery sharedInstance];
+    
+    // Initiate facial recognition variables
+    self.detectFaceController = [[DetectFace alloc] init];
+    self.detectFaceController.delegate = self;
+    self.detectFaceController.previewView = self.previewView;
+
     // Do any additional setup after loading the view.
 }
 
@@ -35,11 +60,83 @@ const unsigned char SpeechKitApplicationKey[] = {0x66, 0xe9, 0x5b, 0x9a, 0x2c, 0
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewWillUnload
+{
+    [self.detectFaceController stopDetection];
+    [super viewWillUnload];
+}
+
+- (void)viewDidUnload {
+    [self setPreviewView:nil];
+    [super viewDidUnload];
+}
+
+#pragma mark - Bluetooth
+
+- (void)connectionChanged:(NSNotification *)notification {
+    // Connection status changed. Indicate on GUI.
+    BOOL isConnected = [(NSNumber *) (notification.userInfo)[@"isConnected"] boolValue];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        // Set image based on connection status
+        if (isConnected) {
+            NSLog(@"Bluetooth is connected");
+        } else {
+            NSLog(@"Bluetooth is disconnected");
+        }
+    });
+}
+
+- (void)sendPosition:(uint8_t)position {
+    // Valid position range: 0 to 180
+    static uint8_t lastPosition = 255;
+    
+    if (!self.allowTX) { // 1
+        return;
+    }
+    
+    // Validate value
+    if (position == lastPosition) { // 2
+        return;
+    }
+    else if ((position < 0) || (position > 180)) { // 3
+        return;
+    }
+    
+    if ([BTDiscovery sharedInstance].bleService) { // 4
+        [[BTDiscovery sharedInstance].bleService writePosition:position];
+        lastPosition = position;
+    }
+    // Start delay timer
+    self.allowTX = NO;
+    if (!self.timerTXDelay) { // 5
+        self.timerTXDelay = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(timerTXDelayElapsed) userInfo:nil repeats:NO];
+    }
+}
+
+- (void)timerTXDelayElapsed {
+    self.allowTX = YES;
+    [self stopTimerTXDelay];
+    
+    // TODO: Change this to send the right positions depending on our commands
+    [self sendPosition:(uint8_t)255];
+}
+
+- (void)stopTimerTXDelay {
+    if (!self.timerTXDelay) {
+        return;
+    }
+    
+    [self.timerTXDelay invalidate];
+    self.timerTXDelay = nil;
+}
+
+
 #pragma mark - Record video
 
--(IBAction)recordAndPlay:(id)sender {
-    [self startCameraControllerFromViewController:self usingDelegate:self];
-}
+//-(IBAction)recordAndPlay:(id)sender {
+//    [self startCameraControllerFromViewController:self usingDelegate:self];
+//}
 
 -(BOOL)startCameraControllerFromViewController:(UIViewController*)controller
                                  usingDelegate:(id )delegate {
@@ -122,6 +219,7 @@ const unsigned char SpeechKitApplicationKey[] = {0x66, 0xe9, 0x5b, 0x9a, 0x2c, 0
     self.messageLabel.text = @"Done Listening..";
 }
 
+
 - (void)recognizer:(SKRecognizer *)recognizer didFinishWithResults:(SKRecognition *)results {
     long numOfResults = [results.results count];
     
@@ -131,10 +229,31 @@ const unsigned char SpeechKitApplicationKey[] = {0x66, 0xe9, 0x5b, 0x9a, 0x2c, 0
 
         NSString *voiceResult = [results firstResult];
         
-        if ([voiceResult isEqualToString:@"Go"]) {
+        if ([[voiceResult uppercaseString] isEqualToString:@"RECORD"]) {
             // Start recording video
             [self startCameraControllerFromViewController:self usingDelegate:self];
+        } else if ([voiceResult rangeOfString:@"Face on" options:NSCaseInsensitiveSearch].location != NSNotFound) {
+            // Start recording video
+            [self.previewView setHidden:NO];
+            [self.detectFaceController startDetection];
+        } else if ([voiceResult rangeOfString:@"Face off" options:NSCaseInsensitiveSearch].location != NSNotFound) {
+            // Stop recording video
+            // TODO: Got to fix the disappearance of beard etc. upon turning on again
+            [self.previewView setHidden:YES];
+            [self.detectFaceController stopDetection];
+        } else if ([voiceResult rangeOfString:@"Picture" options:NSCaseInsensitiveSearch].location != NSNotFound) {
+            CIImage *outImage = self.detectFaceController.outputImage;
+
+            
+            CIContext *context = [CIContext contextWithOptions:nil];
+            CGImageRef ref = [context createCGImage:outImage fromRect:outImage.extent];
+            self.outImageView.image = [UIImage imageWithCGImage:ref scale:1.0 orientation:UIImageOrientationLeftMirrored];
+            CGImageRelease(ref);
+            
+//            self.outImageView = [[UIImageView alloc] initWithImage:[UIImage imageWithCIImage:outImage]];
         }
+
+
         
         self.testLabel.text = voiceResult;
         self.testLabel.adjustsFontSizeToFitWidth = YES;
@@ -153,15 +272,92 @@ const unsigned char SpeechKitApplicationKey[] = {0x66, 0xe9, 0x5b, 0x9a, 0x2c, 0
 
 - (void)recognizer:(SKRecognizer *)recognizer didFinishWithError:(NSError *)error suggestion:(NSString *)suggestion {
     self.recordButton.selected = NO;
-    self.messageLabel.text = @"Connection error";
+    self.messageLabel.text = @"Tap on the Mic";
     self.activityIndicator.hidden = YES;
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
-                                                    message:[error localizedDescription]
-                                                   delegate:nil
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles:nil];
-    [alert show];
+//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+//                                                    message:[error localizedDescription]
+//                                                   delegate:nil
+//                                          cancelButtonTitle:@"OK"
+//                                          otherButtonTitles:nil];
+//    [alert show];
 }
 
+#pragma mark - Facial Recognition
+
+- (void)detectedFaceController:(DetectFace *)controller features:(NSArray *)featuresArray forVideoBox:(CGRect)clap withPreviewBox:(CGRect)previewBox
+{
+//    NSLog(@"YOOO %@", self.detectFaceController.outputImage);
+    
+//        self.outImageView = [[UIImageView alloc] initWithImage:[UIImage imageWithCIImage:self.detectFaceController.outputImage]];
+
+    if (!self.beardImgView) {
+        self.beardImgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"beard"]];
+        self.beardImgView.contentMode = UIViewContentModeScaleToFill;
+        [self.previewView addSubview:self.beardImgView];
+    }
+    
+    if (!self.mustacheImgView) {
+        self.mustacheImgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"mustache"]];
+        self.mustacheImgView.contentMode = UIViewContentModeScaleToFill;
+        [self.previewView addSubview:self.mustacheImgView];
+    }
+    
+    if (!self.hatImgView) {
+        self.hatImgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"christmas_hat"]];
+        self.hatImgView.contentMode = UIViewContentModeScaleToFill;
+        [self.previewView addSubview:self.hatImgView];
+    }
+    
+    for (CIFaceFeature *ff in featuresArray) {
+        // find the correct position for the square layer within the previewLayer
+        // the feature box originates in the bottom left of the video frame.
+        // (Bottom right if mirroring is turned on)
+        CGRect faceRect = [ff bounds];
+        
+        //isMirrored because we are using front camera
+        faceRect = [DetectFace convertFrame:faceRect previewBox:previewBox forVideoBox:clap isMirrored:YES];
+        
+        // TODO: Might have to check relative to screen/previewView mid
+        
+//        NSLog(@"previewView mid: %f, %f", self.previewView.frame.origin.x, self.previewView.frame.origin.y);
+//        NSLog(@"faceRect: %f, %f", faceRect.origin.x, faceRect.origin.y);
+        
+        if (faceRect.origin.x > 150) {
+            // TODO: Turn left
+        } else if (faceRect.origin.x < 30) {
+            // TODO: Turn right
+        }
+        
+        // TODO: Turn up and down
+        
+        
+        float hat_width = 290.0;
+        float hat_height = 360.0;
+        float head_start_y = 150.0; //part of hat image is transparent
+        float head_start_x = 78.0;
+        
+        float width = faceRect.size.width * (hat_width / (hat_width - head_start_x));
+        float height = width * hat_height/hat_width;
+        float y = faceRect.origin.y - (height * head_start_y) / hat_height;
+        float x = faceRect.origin.x - (head_start_x * width/hat_width);
+        [self.hatImgView setFrame:CGRectMake(x, y, width, height)];
+        
+        float beard_width = 192.0;
+        float beard_height = 171.0;
+        width = faceRect.size.width * 0.6;
+        height = width * beard_height/beard_width;
+        y = faceRect.origin.y + faceRect.size.height - (80 * height/beard_height);
+        x = faceRect.origin.x + (faceRect.size.width - width)/2;
+        [self.beardImgView setFrame:CGRectMake(x, y, width, height)];
+        
+        float mustache_width = 212.0;
+        float mustache_height = 58.0;
+        width = faceRect.size.width * 0.9;
+        height = width * mustache_height/mustache_width;
+        y = y - height + 5;
+        x = faceRect.origin.x + (faceRect.size.width - width)/2;
+        [self.mustacheImgView setFrame:CGRectMake(x, y, width, height)];
+    }
+}
 
 @end

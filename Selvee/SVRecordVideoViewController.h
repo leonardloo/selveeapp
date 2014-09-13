@@ -12,13 +12,16 @@
 #import <AssetsLibrary/AssetsLibrary.h>
 #import <SpeechKit/SpeechKit.h>
 #import "SVAppDelegate.h"
+#import "BTDiscovery.h"
+#import "BTService.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface SVRecordVideoViewController : UIViewController <SpeechKitDelegate, SKRecognizerDelegate>
 
 @property (strong, nonatomic) SVAppDelegate *appDelegate;
 
 // Record video
--(IBAction)recordAndPlay:(id)sender;
+//-(IBAction)recordAndPlay:(id)sender;
 -(BOOL)startCameraControllerFromViewController:(UIViewController*)controller
                                  usingDelegate:(id )delegate;
 -(void)video:(NSString *)videoPath didFinishSavingWithError:(NSError *)error contextInfo:(void*)contextInfo;
@@ -31,5 +34,7 @@
 - (IBAction)recordButtonTapped:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UILabel *testLabel;
+
+
 
 @end
