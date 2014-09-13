@@ -1,0 +1,534 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D77ABC0A19C3A0C500FA6148 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77ABC0919C3A0C500FA6148 /* Foundation.framework */; };
+		D77ABC0C19C3A0C500FA6148 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77ABC0B19C3A0C500FA6148 /* CoreGraphics.framework */; };
+		D77ABC0E19C3A0C500FA6148 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77ABC0D19C3A0C500FA6148 /* UIKit.framework */; };
+		D77ABC1419C3A0C500FA6148 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D77ABC1219C3A0C500FA6148 /* InfoPlist.strings */; };
+		D77ABC1619C3A0C500FA6148 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D77ABC1519C3A0C500FA6148 /* main.m */; };
+		D77ABC1A19C3A0C500FA6148 /* SVAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D77ABC1919C3A0C500FA6148 /* SVAppDelegate.m */; };
+		D77ABC1D19C3A0C500FA6148 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D77ABC1B19C3A0C500FA6148 /* Main.storyboard */; };
+		D77ABC2219C3A0C500FA6148 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D77ABC2119C3A0C500FA6148 /* Images.xcassets */; };
+		D77ABC2919C3A0C500FA6148 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77ABC2819C3A0C500FA6148 /* XCTest.framework */; };
+		D77ABC2A19C3A0C500FA6148 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77ABC0919C3A0C500FA6148 /* Foundation.framework */; };
+		D77ABC2B19C3A0C500FA6148 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77ABC0D19C3A0C500FA6148 /* UIKit.framework */; };
+		D77ABC3319C3A0C500FA6148 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D77ABC3119C3A0C500FA6148 /* InfoPlist.strings */; };
+		D77ABC3519C3A0C500FA6148 /* SelveeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D77ABC3419C3A0C500FA6148 /* SelveeTests.m */; };
+		D77ABC4019C3CC1800FA6148 /* SVRecordVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D77ABC3F19C3CC1800FA6148 /* SVRecordVideoViewController.m */; };
+		D77ABC4319C3CC2500FA6148 /* SVPlayVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D77ABC4219C3CC2500FA6148 /* SVPlayVideoViewController.m */; };
+		D77ABD1F19C3D3F800FA6148 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77ABD1E19C3D3F800FA6148 /* AVFoundation.framework */; };
+		D77ABD3319C3E11A00FA6148 /* SpeechKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77ABD3219C3E11A00FA6148 /* SpeechKit.framework */; };
+		D77ABD3719C3E14200FA6148 /* earcon_cancel.wav in Resources */ = {isa = PBXBuildFile; fileRef = D77ABD3419C3E14200FA6148 /* earcon_cancel.wav */; };
+		D77ABD3819C3E14200FA6148 /* earcon_done_listening.wav in Resources */ = {isa = PBXBuildFile; fileRef = D77ABD3519C3E14200FA6148 /* earcon_done_listening.wav */; };
+		D77ABD3919C3E14200FA6148 /* earcon_listening.wav in Resources */ = {isa = PBXBuildFile; fileRef = D77ABD3619C3E14200FA6148 /* earcon_listening.wav */; };
+		D77ABD3B19C3E20D00FA6148 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77ABD3A19C3E20D00FA6148 /* AudioToolbox.framework */; };
+		D77ABD3D19C3E21500FA6148 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77ABD3C19C3E21500FA6148 /* CFNetwork.framework */; };
+		D77ABD3F19C3E22100FA6148 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77ABD3E19C3E22100FA6148 /* SystemConfiguration.framework */; };
+		D77ABD4119C3E22700FA6148 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77ABD4019C3E22700FA6148 /* Security.framework */; };
+		D77ABD4319C3E22F00FA6148 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77ABD4219C3E22F00FA6148 /* CoreLocation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D77ABC2C19C3A0C500FA6148 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D77ABBFE19C3A0C500FA6148 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D77ABC0519C3A0C500FA6148;
+			remoteInfo = Selvee;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D77ABC0619C3A0C500FA6148 /* Selvee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Selvee.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D77ABC0919C3A0C500FA6148 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D77ABC0B19C3A0C500FA6148 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D77ABC0D19C3A0C500FA6148 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D77ABC1119C3A0C500FA6148 /* Selvee-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Selvee-Info.plist"; sourceTree = "<group>"; };
+		D77ABC1319C3A0C500FA6148 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D77ABC1519C3A0C500FA6148 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D77ABC1719C3A0C500FA6148 /* Selvee-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Selvee-Prefix.pch"; sourceTree = "<group>"; };
+		D77ABC1819C3A0C500FA6148 /* SVAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SVAppDelegate.h; sourceTree = "<group>"; };
+		D77ABC1919C3A0C500FA6148 /* SVAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SVAppDelegate.m; sourceTree = "<group>"; };
+		D77ABC1C19C3A0C500FA6148 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D77ABC2119C3A0C500FA6148 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D77ABC2719C3A0C500FA6148 /* SelveeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SelveeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D77ABC2819C3A0C500FA6148 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		D77ABC3019C3A0C500FA6148 /* SelveeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SelveeTests-Info.plist"; sourceTree = "<group>"; };
+		D77ABC3219C3A0C500FA6148 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D77ABC3419C3A0C500FA6148 /* SelveeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelveeTests.m; sourceTree = "<group>"; };
+		D77ABC3E19C3CC1800FA6148 /* SVRecordVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVRecordVideoViewController.h; sourceTree = "<group>"; };
+		D77ABC3F19C3CC1800FA6148 /* SVRecordVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRecordVideoViewController.m; sourceTree = "<group>"; };
+		D77ABC4119C3CC2500FA6148 /* SVPlayVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVPlayVideoViewController.h; sourceTree = "<group>"; };
+		D77ABC4219C3CC2500FA6148 /* SVPlayVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVPlayVideoViewController.m; sourceTree = "<group>"; };
+		D77ABD1E19C3D3F800FA6148 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D77ABD3219C3E11A00FA6148 /* SpeechKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpeechKit.framework; path = ../DragonMobileSDK_1.4.12/SpeechKit.framework; sourceTree = "<group>"; };
+		D77ABD3419C3E14200FA6148 /* earcon_cancel.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = earcon_cancel.wav; sourceTree = "<group>"; };
+		D77ABD3519C3E14200FA6148 /* earcon_done_listening.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = earcon_done_listening.wav; sourceTree = "<group>"; };
+		D77ABD3619C3E14200FA6148 /* earcon_listening.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = earcon_listening.wav; sourceTree = "<group>"; };
+		D77ABD3A19C3E20D00FA6148 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		D77ABD3C19C3E21500FA6148 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		D77ABD3E19C3E22100FA6148 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		D77ABD4019C3E22700FA6148 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		D77ABD4219C3E22F00FA6148 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D77ABC0319C3A0C500FA6148 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D77ABD4319C3E22F00FA6148 /* CoreLocation.framework in Frameworks */,
+				D77ABD4119C3E22700FA6148 /* Security.framework in Frameworks */,
+				D77ABD3F19C3E22100FA6148 /* SystemConfiguration.framework in Frameworks */,
+				D77ABD3D19C3E21500FA6148 /* CFNetwork.framework in Frameworks */,
+				D77ABD3B19C3E20D00FA6148 /* AudioToolbox.framework in Frameworks */,
+				D77ABD3319C3E11A00FA6148 /* SpeechKit.framework in Frameworks */,
+				D77ABD1F19C3D3F800FA6148 /* AVFoundation.framework in Frameworks */,
+				D77ABC0C19C3A0C500FA6148 /* CoreGraphics.framework in Frameworks */,
+				D77ABC0E19C3A0C500FA6148 /* UIKit.framework in Frameworks */,
+				D77ABC0A19C3A0C500FA6148 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D77ABC2419C3A0C500FA6148 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D77ABC2919C3A0C500FA6148 /* XCTest.framework in Frameworks */,
+				D77ABC2B19C3A0C500FA6148 /* UIKit.framework in Frameworks */,
+				D77ABC2A19C3A0C500FA6148 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D77ABBFD19C3A0C500FA6148 = {
+			isa = PBXGroup;
+			children = (
+				D77ABC0F19C3A0C500FA6148 /* Selvee */,
+				D77ABC2E19C3A0C500FA6148 /* SelveeTests */,
+				D77ABC0819C3A0C500FA6148 /* Frameworks */,
+				D77ABC0719C3A0C500FA6148 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D77ABC0719C3A0C500FA6148 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D77ABC0619C3A0C500FA6148 /* Selvee.app */,
+				D77ABC2719C3A0C500FA6148 /* SelveeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D77ABC0819C3A0C500FA6148 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D77ABD4219C3E22F00FA6148 /* CoreLocation.framework */,
+				D77ABD4019C3E22700FA6148 /* Security.framework */,
+				D77ABD3E19C3E22100FA6148 /* SystemConfiguration.framework */,
+				D77ABD3C19C3E21500FA6148 /* CFNetwork.framework */,
+				D77ABD3A19C3E20D00FA6148 /* AudioToolbox.framework */,
+				D77ABD3219C3E11A00FA6148 /* SpeechKit.framework */,
+				D77ABD1E19C3D3F800FA6148 /* AVFoundation.framework */,
+				D77ABC0919C3A0C500FA6148 /* Foundation.framework */,
+				D77ABC0B19C3A0C500FA6148 /* CoreGraphics.framework */,
+				D77ABC0D19C3A0C500FA6148 /* UIKit.framework */,
+				D77ABC2819C3A0C500FA6148 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D77ABC0F19C3A0C500FA6148 /* Selvee */ = {
+			isa = PBXGroup;
+			children = (
+				D77ABC4419C3D37F00FA6148 /* Third Party */,
+				D77ABC1819C3A0C500FA6148 /* SVAppDelegate.h */,
+				D77ABC1919C3A0C500FA6148 /* SVAppDelegate.m */,
+				D77ABC1B19C3A0C500FA6148 /* Main.storyboard */,
+				D77ABC3E19C3CC1800FA6148 /* SVRecordVideoViewController.h */,
+				D77ABC3F19C3CC1800FA6148 /* SVRecordVideoViewController.m */,
+				D77ABC4119C3CC2500FA6148 /* SVPlayVideoViewController.h */,
+				D77ABC4219C3CC2500FA6148 /* SVPlayVideoViewController.m */,
+				D77ABC2119C3A0C500FA6148 /* Images.xcassets */,
+				D77ABC1019C3A0C500FA6148 /* Supporting Files */,
+			);
+			path = Selvee;
+			sourceTree = "<group>";
+		};
+		D77ABC1019C3A0C500FA6148 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D77ABD3419C3E14200FA6148 /* earcon_cancel.wav */,
+				D77ABD3519C3E14200FA6148 /* earcon_done_listening.wav */,
+				D77ABD3619C3E14200FA6148 /* earcon_listening.wav */,
+				D77ABC1119C3A0C500FA6148 /* Selvee-Info.plist */,
+				D77ABC1219C3A0C500FA6148 /* InfoPlist.strings */,
+				D77ABC1519C3A0C500FA6148 /* main.m */,
+				D77ABC1719C3A0C500FA6148 /* Selvee-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D77ABC2E19C3A0C500FA6148 /* SelveeTests */ = {
+			isa = PBXGroup;
+			children = (
+				D77ABC3419C3A0C500FA6148 /* SelveeTests.m */,
+				D77ABC2F19C3A0C500FA6148 /* Supporting Files */,
+			);
+			path = SelveeTests;
+			sourceTree = "<group>";
+		};
+		D77ABC2F19C3A0C500FA6148 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D77ABC3019C3A0C500FA6148 /* SelveeTests-Info.plist */,
+				D77ABC3119C3A0C500FA6148 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D77ABC4419C3D37F00FA6148 /* Third Party */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Third Party";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D77ABC0519C3A0C500FA6148 /* Selvee */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D77ABC3819C3A0C500FA6148 /* Build configuration list for PBXNativeTarget "Selvee" */;
+			buildPhases = (
+				D77ABC0219C3A0C500FA6148 /* Sources */,
+				D77ABC0319C3A0C500FA6148 /* Frameworks */,
+				D77ABC0419C3A0C500FA6148 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Selvee;
+			productName = Selvee;
+			productReference = D77ABC0619C3A0C500FA6148 /* Selvee.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D77ABC2619C3A0C500FA6148 /* SelveeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D77ABC3B19C3A0C500FA6148 /* Build configuration list for PBXNativeTarget "SelveeTests" */;
+			buildPhases = (
+				D77ABC2319C3A0C500FA6148 /* Sources */,
+				D77ABC2419C3A0C500FA6148 /* Frameworks */,
+				D77ABC2519C3A0C500FA6148 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D77ABC2D19C3A0C500FA6148 /* PBXTargetDependency */,
+			);
+			name = SelveeTests;
+			productName = SelveeTests;
+			productReference = D77ABC2719C3A0C500FA6148 /* SelveeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D77ABBFE19C3A0C500FA6148 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SV;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Selvee;
+				TargetAttributes = {
+					D77ABC2619C3A0C500FA6148 = {
+						TestTargetID = D77ABC0519C3A0C500FA6148;
+					};
+				};
+			};
+			buildConfigurationList = D77ABC0119C3A0C500FA6148 /* Build configuration list for PBXProject "Selvee" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D77ABBFD19C3A0C500FA6148;
+			productRefGroup = D77ABC0719C3A0C500FA6148 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D77ABC0519C3A0C500FA6148 /* Selvee */,
+				D77ABC2619C3A0C500FA6148 /* SelveeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D77ABC0419C3A0C500FA6148 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D77ABC2219C3A0C500FA6148 /* Images.xcassets in Resources */,
+				D77ABC1419C3A0C500FA6148 /* InfoPlist.strings in Resources */,
+				D77ABD3819C3E14200FA6148 /* earcon_done_listening.wav in Resources */,
+				D77ABD3719C3E14200FA6148 /* earcon_cancel.wav in Resources */,
+				D77ABD3919C3E14200FA6148 /* earcon_listening.wav in Resources */,
+				D77ABC1D19C3A0C500FA6148 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D77ABC2519C3A0C500FA6148 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D77ABC3319C3A0C500FA6148 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D77ABC0219C3A0C500FA6148 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D77ABC1619C3A0C500FA6148 /* main.m in Sources */,
+				D77ABC4019C3CC1800FA6148 /* SVRecordVideoViewController.m in Sources */,
+				D77ABC4319C3CC2500FA6148 /* SVPlayVideoViewController.m in Sources */,
+				D77ABC1A19C3A0C500FA6148 /* SVAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D77ABC2319C3A0C500FA6148 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D77ABC3519C3A0C500FA6148 /* SelveeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D77ABC2D19C3A0C500FA6148 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D77ABC0519C3A0C500FA6148 /* Selvee */;
+			targetProxy = D77ABC2C19C3A0C500FA6148 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D77ABC1219C3A0C500FA6148 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D77ABC1319C3A0C500FA6148 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D77ABC1B19C3A0C500FA6148 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D77ABC1C19C3A0C500FA6148 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D77ABC3119C3A0C500FA6148 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D77ABC3219C3A0C500FA6148 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D77ABC3619C3A0C500FA6148 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D77ABC3719C3A0C500FA6148 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D77ABC3919C3A0C500FA6148 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/leonard/Desktop/DragonMobileSDK_1.4.12,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Selvee/Selvee-Prefix.pch";
+				INFOPLIST_FILE = "Selvee/Selvee-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D77ABC3A19C3A0C500FA6148 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/leonard/Desktop/DragonMobileSDK_1.4.12,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Selvee/Selvee-Prefix.pch";
+				INFOPLIST_FILE = "Selvee/Selvee-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		D77ABC3C19C3A0C500FA6148 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Selvee.app/Selvee";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Selvee/Selvee-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "SelveeTests/SelveeTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		D77ABC3D19C3A0C500FA6148 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Selvee.app/Selvee";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Selvee/Selvee-Prefix.pch";
+				INFOPLIST_FILE = "SelveeTests/SelveeTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D77ABC0119C3A0C500FA6148 /* Build configuration list for PBXProject "Selvee" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D77ABC3619C3A0C500FA6148 /* Debug */,
+				D77ABC3719C3A0C500FA6148 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D77ABC3819C3A0C500FA6148 /* Build configuration list for PBXNativeTarget "Selvee" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D77ABC3919C3A0C500FA6148 /* Debug */,
+				D77ABC3A19C3A0C500FA6148 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D77ABC3B19C3A0C500FA6148 /* Build configuration list for PBXNativeTarget "SelveeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D77ABC3C19C3A0C500FA6148 /* Debug */,
+				D77ABC3D19C3A0C500FA6148 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D77ABBFE19C3A0C500FA6148 /* Project object */;
+}
