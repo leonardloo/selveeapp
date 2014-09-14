@@ -198,10 +198,7 @@ const unsigned char SpeechKitApplicationKey[] = {0x66, 0xe9, 0x5b, 0x9a, 0x2c, 0
             
             [self.outImageView addSubview:maskedImageView];
             
-            UIGraphicsBeginImageContextWithOptions(self.outImageView.bounds.size, YES, [[UIScreen mainScreen] scale]);
-            [self.outImageView.layer renderInContext:UIGraphicsGetCurrentContext()];
-            UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
-            UIGraphicsEndImageContext();
+
             
             [self.previewView setAlpha:0.4f];
             
@@ -214,7 +211,11 @@ const unsigned char SpeechKitApplicationKey[] = {0x66, 0xe9, 0x5b, 0x9a, 0x2c, 0
                 
             }];
             
-            UIImageWriteToSavedPhotosAlbum(img, nil, nil, nil);
+//            UIGraphicsBeginImageContextWithOptions(self.outImageView.bounds.size, YES, [[UIScreen mainScreen] scale]);
+//            [self.outImageView.layer renderInContext:UIGraphicsGetCurrentContext()];
+//            UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
+//            UIGraphicsEndImageContext();
+//            UIImageWriteToSavedPhotosAlbum(img, nil, nil, nil);
             
             
         } else if ([voiceResult rangeOfString:@"Remove" options:NSCaseInsensitiveSearch].location != NSNotFound) {
@@ -235,10 +236,38 @@ const unsigned char SpeechKitApplicationKey[] = {0x66, 0xe9, 0x5b, 0x9a, 0x2c, 0
                 [subView removeFromSuperview];
             }
             [self.previewView addSubview:self.bieberImgView];
-        }
+        } else if ([voiceResult rangeOfString:@"Save" options:NSCaseInsensitiveSearch].location != NSNotFound) {
+            UIGraphicsBeginImageContextWithOptions(self.outImageView.bounds.size, YES, [[UIScreen mainScreen] scale]);
+            [self.outImageView.layer renderInContext:UIGraphicsGetCurrentContext()];
+            UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
+            UIGraphicsEndImageContext();
+            UIImageWriteToSavedPhotosAlbum(img, nil, nil, nil);
+            [[[UIAlertView alloc] initWithTitle:@"" message:@"Image successfully saved!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil] show];
+        } else if ([voiceResult rangeOfString:@"Share" options:NSCaseInsensitiveSearch].location != NSNotFound) {
+            // TODO: Facebook share
+            UIGraphicsBeginImageContextWithOptions(self.outImageView.bounds.size, YES, [[UIScreen mainScreen] scale]);
+            [self.outImageView.layer renderInContext:UIGraphicsGetCurrentContext()];
+            UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
+            UIGraphicsEndImageContext();
+            FBPhotoParams *params = [[FBPhotoParams alloc] init];
             
-        
-
+            // Note that params.photos can be an array of images.  In this example
+            // we only use a single image, wrapped in an array.
+            params.photos = @[img];
+            
+            [FBDialogs presentShareDialogWithPhotoParams:params
+                                             clientState:nil
+                                                 handler:^(FBAppCall *call,
+                                                           NSDictionary *results,
+                                                           NSError *error) {
+                                                     if (error) {
+                                                         NSLog(@"Error: %@",
+                                                               error.description);
+                                                     } else {
+                                                         NSLog(@"Success!");
+                                                     }
+                                                 }];
+        }
 
         self.testLabel.text = voiceResult;
         self.testLabel.adjustsFontSizeToFitWidth = YES;
@@ -323,18 +352,12 @@ const unsigned char SpeechKitApplicationKey[] = {0x66, 0xe9, 0x5b, 0x9a, 0x2c, 0
             xString = @"2,";
         }
         
-        if (faceRect.origin.y > 130) {
-            NSLog(@"Turned up slow");
+        if (faceRect.origin.y > 140) {
+            NSLog(@"Turned up");
             yString = @"1";
-        } else if (faceRect.origin.y > 160) {
-            NSLog(@"Turned up fast");
-            yString = @"2";
-        } else if (faceRect.origin.y < 70) {
-            NSLog(@"Turned down slow");
+        } else if (faceRect.origin.y < 60) {
+            NSLog(@"Turned down");
             yString = @"-1";
-        } else if (faceRect.origin.y < 40) {
-            NSLog(@"Turned down fast");
-            yString = @"-2";
         }
         
         NSString *tupleString = [xString stringByAppendingString:yString];

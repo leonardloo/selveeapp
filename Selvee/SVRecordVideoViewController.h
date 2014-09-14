@@ -13,6 +13,7 @@
 #import <SpeechKit/SpeechKit.h>
 #import "SVAppDelegate.h"
 #import <AVFoundation/AVFoundation.h>
+#import <FacebookSDK/FacebookSDK.h>
 
 @interface SVRecordVideoViewController : UIViewController <SpeechKitDelegate, SKRecognizerDelegate>
 

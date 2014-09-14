@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D760A20E19C59DF9003205F3 /* SVLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D760A20D19C59DF9003205F3 /* SVLoginViewController.m */; };
 		D77ABC0A19C3A0C500FA6148 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77ABC0919C3A0C500FA6148 /* Foundation.framework */; };
 		D77ABC0C19C3A0C500FA6148 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77ABC0B19C3A0C500FA6148 /* CoreGraphics.framework */; };
 		D77ABC0E19C3A0C500FA6148 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77ABC0D19C3A0C500FA6148 /* UIKit.framework */; };
@@ -36,6 +37,7 @@
 		D77ABD9019C4924400FA6148 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77ABD8F19C4924400FA6148 /* QuartzCore.framework */; };
 		D77ABD9219C4924B00FA6148 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77ABD9119C4924B00FA6148 /* CoreImage.framework */; };
 		D77ABD9519C492E600FA6148 /* DetectFace.m in Sources */ = {isa = PBXBuildFile; fileRef = D77ABD9419C492E600FA6148 /* DetectFace.m */; };
+		D77ABDDB19C59C5300FA6148 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77ABDDA19C59C5300FA6148 /* FacebookSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D760A20C19C59DF9003205F3 /* SVLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVLoginViewController.h; sourceTree = "<group>"; };
+		D760A20D19C59DF9003205F3 /* SVLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVLoginViewController.m; sourceTree = "<group>"; };
 		D77ABC0619C3A0C500FA6148 /* Selvee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Selvee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D77ABC0919C3A0C500FA6148 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D77ABC0B19C3A0C500FA6148 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -84,6 +88,7 @@
 		D77ABD9119C4924B00FA6148 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		D77ABD9319C492E600FA6148 /* DetectFace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetectFace.h; path = ../DetectFace.h; sourceTree = "<group>"; };
 		D77ABD9419C492E600FA6148 /* DetectFace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetectFace.m; path = ../DetectFace.m; sourceTree = "<group>"; };
+		D77ABDDA19C59C5300FA6148 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D77ABDDB19C59C5300FA6148 /* FacebookSDK.framework in Frameworks */,
 				D77ABD9219C4924B00FA6148 /* CoreImage.framework in Frameworks */,
 				D77ABD9019C4924400FA6148 /* QuartzCore.framework in Frameworks */,
 				D77ABD8E19C4923A00FA6148 /* CoreMedia.framework in Frameworks */,
@@ -143,6 +149,7 @@
 		D77ABC0819C3A0C500FA6148 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D77ABDDA19C59C5300FA6148 /* FacebookSDK.framework */,
 				D77ABD9119C4924B00FA6148 /* CoreImage.framework */,
 				D77ABD8F19C4924400FA6148 /* QuartzCore.framework */,
 				D77ABD8D19C4923A00FA6148 /* CoreMedia.framework */,
@@ -170,6 +177,8 @@
 				D77ABC1819C3A0C500FA6148 /* SVAppDelegate.h */,
 				D77ABC1919C3A0C500FA6148 /* SVAppDelegate.m */,
 				D77ABC1B19C3A0C500FA6148 /* Main.storyboard */,
+				D760A20C19C59DF9003205F3 /* SVLoginViewController.h */,
+				D760A20D19C59DF9003205F3 /* SVLoginViewController.m */,
 				D77ABC3E19C3CC1800FA6148 /* SVRecordVideoViewController.h */,
 				D77ABC3F19C3CC1800FA6148 /* SVRecordVideoViewController.m */,
 				D77ABC2119C3A0C500FA6148 /* Images.xcassets */,
@@ -312,6 +321,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D77ABC1619C3A0C500FA6148 /* main.m in Sources */,
+				D760A20E19C59DF9003205F3 /* SVLoginViewController.m in Sources */,
 				D77ABC4019C3CC1800FA6148 /* SVRecordVideoViewController.m in Sources */,
 				D77ABD9519C492E600FA6148 /* DetectFace.m in Sources */,
 				D77ABC1A19C3A0C500FA6148 /* SVAppDelegate.m in Sources */,
@@ -442,6 +452,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/leonard/Desktop/DragonMobileSDK_1.4.12,
+					/Users/leonard/Documents/FacebookSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Selvee/Selvee-Prefix.pch";
@@ -459,6 +470,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/leonard/Desktop/DragonMobileSDK_1.4.12,
+					/Users/leonard/Documents/FacebookSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Selvee/Selvee-Prefix.pch";
@@ -527,6 +539,7 @@
 				D77ABC3A19C3A0C500FA6148 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D77ABC3B19C3A0C500FA6148 /* Build configuration list for PBXNativeTarget "SelveeTests" */ = {
 			isa = XCConfigurationList;
@@ -535,6 +548,7 @@
 				D77ABC3D19C3A0C500FA6148 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

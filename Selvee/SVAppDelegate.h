@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <SpeechKit/SpeechKit.h>
+#import <FacebookSDK/FacebookSDK.h>
 
 @interface SVAppDelegate : UIResponder <UIApplicationDelegate>
 
