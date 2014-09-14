@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4G7-Ov-A8w">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="9ZH-Xx-rhj">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -46,14 +46,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="szQ-Gi-Axu">
-                                <rect key="frame" x="20" y="112" width="280" height="303"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P5F-M1-z6Q">
-                                <rect key="frame" x="120" y="423" width="81" height="76"/>
+                                <rect key="frame" x="90" y="421" width="140" height="140"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qr7-C4-RTI">
+                                <rect key="frame" x="0.0" y="102" width="320" height="313"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -63,94 +64,14 @@
                         <outlet property="activityIndicator" destination="2XL-fV-sRG" id="p63-Su-bhZ"/>
                         <outlet property="messageLabel" destination="mDY-1K-TEh" id="aMU-KW-iA1"/>
                         <outlet property="outImageView" destination="P5F-M1-z6Q" id="jn2-Lg-rI7"/>
-                        <outlet property="previewView" destination="szQ-Gi-Axu" id="vCW-7U-eUu"/>
+                        <outlet property="previewView" destination="Qr7-C4-RTI" id="Oef-W7-YhR"/>
                         <outlet property="recordButton" destination="wei-gO-dgr" id="qhi-Hj-u78"/>
                         <outlet property="testLabel" destination="aNF-Ii-nIr" id="KQf-1L-CCN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5F0-Ta-1wM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="566" y="-740"/>
-        </scene>
-        <!--Facial View Controller - Facial-->
-        <scene sceneID="Nib-aa-x5y">
-            <objects>
-                <viewController id="ukU-7K-a3l" customClass="SVFacialViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="UfF-a2-Rbj"/>
-                        <viewControllerLayoutGuide type="bottom" id="BPe-Ml-SGl"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="uS5-ao-xeE">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DOV-Sb-I8t">
-                                <rect key="frame" x="0.0" y="42" width="320" height="452"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Facial" id="ccT-8q-l7d"/>
-                    <connections>
-                        <outlet property="previewView" destination="DOV-Sb-I8t" id="rgi-lf-BY0"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RyH-pZ-mwL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="566" y="616"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="try-bk-wwN">
-            <objects>
-                <tabBarController definesPresentationContext="YES" id="4G7-Ov-A8w" sceneMemberID="viewController">
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="Om9-lU-7eV">
-                        <rect key="frame" x="129" y="330" width="163" height="49"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="9ZH-Xx-rhj" kind="relationship" relationship="viewControllers" id="KqT-Wr-wmw"/>
-                        <segue destination="ukU-7K-a3l" kind="relationship" relationship="viewControllers" id="1hW-TJ-XKj"/>
-                        <segue destination="HLB-cV-tmE" kind="relationship" relationship="viewControllers" id="WkN-iH-Ks8"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Vt4-T5-naP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-50" y="-123"/>
-        </scene>
-        <!--Play Video View Controller - Play Video-->
-        <scene sceneID="fGS-tZ-G5E">
-            <objects>
-                <viewController id="HLB-cV-tmE" customClass="SVPlayVideoViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="xtO-dA-L43"/>
-                        <viewControllerLayoutGuide type="bottom" id="Cun-bS-iBR"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="yHp-ge-2y2">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0aT-ja-Cyj">
-                                <rect key="frame" x="112" y="269" width="96" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Choose Video">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="playVideo:" destination="HLB-cV-tmE" eventType="touchUpInside" id="wFE-WF-utf"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Play Video" id="f4z-U9-a7z"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ch8-El-ASB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="566" y="-69"/>
+            <point key="canvasLocation" x="60" y="-404"/>
         </scene>
     </scenes>
     <resources>

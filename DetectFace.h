@@ -17,8 +17,9 @@
 @interface DetectFace : NSObject
 
 @property (nonatomic, weak) id delegate;
-@property (nonatomic, strong) UIView *previewView;
+@property (nonatomic, strong) UIImageView *previewView;
 @property (nonatomic, strong) CIImage *outputImage;
+@property (nonatomic, strong) UIImageView *outputImageView;
 
 - (void)startDetection;
 - (void)stopDetection;
